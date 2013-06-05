@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  breed: MyString
+  color: MyString
+  birthday: 2013-06-05
+  notes: MyText
+  rabies_certificate: false
+
+two:
+  name: MyString
+  breed: MyString
+  color: MyString
+  birthday: 2013-06-05
+  notes: MyText
+  rabies_certificate: false
