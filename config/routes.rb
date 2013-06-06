@@ -1,4 +1,6 @@
 Dogwalker::Application.routes.draw do
+  resources :walks
+
   resources :dogs
 
   # The priority is based upon order of creation: first created -> highest priority.
