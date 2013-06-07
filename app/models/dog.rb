@@ -7,4 +7,8 @@ class Dog < ActiveRecord::Base
 	def self.fixed?
 		fixed
 	end
+
+	def next_walk
+		walks.where("starttime > ?", Time.now).first
+	end
 end
