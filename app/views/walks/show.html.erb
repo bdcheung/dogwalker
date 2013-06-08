@@ -1,0 +1,6 @@
+<h1>Walk for <%= @walk.dog.name %></h1>
+<p>
+	<strong>Date:</strong> <%= @walk.starttime.strftime("%B %-d, %Y") %><br />
+	<strong>Time:</strong> <%= @walk.starttime.strftime("%-l:%M %P") %><br />
+	<strong>Duration:</strong> <%= @walk.duration_in_minutes %> minutes<br />
+</p>
