@@ -193,7 +193,8 @@ DEPENDENCIES
   jbuilder (~> 1.0.1)
   jquery-rails
   rails (= 4.0.0.rc1)
-  rspec-rails (~> 2.0)
+  rb-fsevent
+  rspec-rails
   sass-rails (~> 4.0.0.rc1)
   sdoc
   selenium-webdriver

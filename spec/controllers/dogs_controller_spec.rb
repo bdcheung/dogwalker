@@ -1,12 +1,16 @@
 require 'spec_helper'
 
-describe Dog do
-	before { @dog = Dog.new(	name: "Fido",
-								breed: "Dachsund",
-								color: "Brown", 
-								birthday: "January 1, 2013", 
-								rabies_certificate: true, 
-								fixed: true, 
-								gender: "Male"
-								)}
+describe DogsController do
+	describe "Dog" do
+		before do
+			@dog = Dog.new(name:"Fido")
+		end
+		it "should have a name" do
+			@dog.should respond_to(:name)
+		end
+		it "should be on the front page" do
+			visit dogs_path
+			@dog.should respond_to(:foo)
+		end
+	end
 end
