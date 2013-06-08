@@ -35,6 +35,16 @@ end
 group :development, :test do
 	gem 'rspec-rails', '~> 2.0'
 	gem 'guard-rspec'
+	gem 'spork-rails', github: 'railstutorial/spork-rails'
+	gem 'guard-spork', '1.5.0'
+	gem 'childprocess'
+end
+
+# Test gems on Macintosh OS X
+group :test do
+	gem 'capybara'
+	gem 'selenium-webdriver'
+	gem 'growl'
 end
 
 # Use ActiveModel has_secure_password
