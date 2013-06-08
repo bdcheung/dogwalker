@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dogwalker</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+	<title>Dogwalker</title>
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span12">
+				<header>
+					<%= nav_bar :fixed => :top, :brand => "DogWalker", :responsive => true do %>
+						<%= menu_group do %>
+							<%= menu_item "Home", root_path %>
+							<%= menu_divider %>
+							<%= drop_down "Dogs" do %>
+								<%= menu_item "List All", dogs_path %>
+								<%= menu_item "Add New", new_dog_path %>
+							<% end %>
+							<%= drop_down "Walks" do %>
+								<%= menu_item "List Upcoming", walks_path %>
+								<%= menu_item "Schedule New", new_walk_path %>
+							<% end %>
+						<% end %>
+					<% end %>
+				</header>
+			</div>
+			<div class="span12">
+				<%= yield %>
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>

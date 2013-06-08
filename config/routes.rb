@@ -1,5 +1,5 @@
 Dogwalker::Application.routes.draw do
-  root 'walks#index'
+  root 'static_pages#home'
   get "static_pages/home"
   get "static_pages/help"
   resources :walks
