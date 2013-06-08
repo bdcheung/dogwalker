@@ -1,9 +1,22 @@
-<strong>Name:</strong> <%= @dog.name %>
+<p>
+	<strong>Name:</strong> <%= @dog.name %>
 <br>
 <strong>Breed: </strong><%= @dog.breed %>
 <br>
 <strong>Color: </strong><%= @dog.color %>
 <br>
-<strong>Birthday: </strong><%= @dog.birthday.strftime("%B %e, %Y") %>
+<strong>Gender: </strong><%= @dog.gender %>
 <br>
-<strong>Rabie Certificate On File:</strong> <%= @dog.rabies_certificate %>
+<strong>Birthday: </strong><%= @dog.birthday.strftime("%B %-d, %Y") %>
+<br>
+<strong>Rabies Certificate On File:</strong> <%= @dog.rabies_certificate %>
+</p>
+<p>
+	<h2>Upcoming Walks:</h2>
+	<% @dog.walks.upcoming.each do |walk| %>
+	<p><%= walk.starttime.strftime("%A, %B %-d at %-l:%M%P") %> - Duration: <%= walk.duration_in_minutes %> minutes</p>
+	<% end %>
+</p>
+<footer>
+	<%= link_to "Show all dogs", dogs_path %>
+</footer>

@@ -1,0 +1,9 @@
+<% @walks.each do |walk| %>
+<p><%= walk.starttime.strftime("%A, %B %-d at %-l:%M%P") %>
+	<br>
+	<%= walk.dog.name %>
+</p>
+<% end %>
+<footer>
+  <%= link_to "Show dogs", dogs_path %>
+</footer>

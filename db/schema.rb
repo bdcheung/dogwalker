@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130607195017) do
+ActiveRecord::Schema.define(version: 20130608025450) do
 
   create_table "dogs", force: true do |t|
     t.string   "name"
     t.string   "breed"
     t.string   "color"
-    t.date     "birthday"
+    t.datetime "birthday"
     t.text     "notes"
     t.boolean  "rabies_certificate"
     t.datetime "created_at"

@@ -1,3 +1,6 @@
 <% @dogs.each do |d| %>
-	<%= link_to d.name, d %>
+	<p><%= link_to d.name, d %></p>
 <% end %>
+<footer>
+	<%= link_to "Add a new dog", new_dog_path %>
+</footer>

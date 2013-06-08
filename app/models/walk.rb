@@ -8,6 +8,10 @@ class Walk < ActiveRecord::Base
 		where("starttime > ?", Time.now).first
 	end
 
+	def self.upcoming
+		where("starttime > ?", Time.now).order("starttime")
+	end
+
 	private
 	def walk_params
 		params.require(:walk).permit(:starttime, :duration)

@@ -1,0 +1,30 @@
+<h1>Add a new dog</h1>
+<%= form_for(@dog) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %><br />
+
+<%= f.label :breed %>
+<%= f.text_field :breed %><br />
+
+<%= f.label :birthday %>
+<%= f.date_select :birthday, :start_year => Time.now.year - 20, :end_year => Time.now.year %><br />
+
+<%= f.label :color %>
+<%= f.text_field :color %><br />
+
+<%= f.label :gender %>
+<%= f.select :gender, Dog::GENDER %><br />
+
+<%= options_for_select([['Yes', true], ['No', false]]) %>
+<%= f.label :rabies_certificate %>
+<%= f.select :rabies_certificate, YES_NO %><br />
+
+<%= f.label :fixed %>
+<%= f.select :fixed, YES_NO %><br />
+
+<%= f.submit %>
+
+<% end %>
+<footer>
+	<%= link_to  "Cancel", root_path %>
+</footer>

@@ -1,0 +1,1 @@
+YES_NO = {'Yes'=>true, 'No'=>false}
