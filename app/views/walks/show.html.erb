@@ -4,3 +4,6 @@
 	<strong>Time:</strong> <%= @walk.starttime.strftime("%-l:%M %P") %><br />
 	<strong>Duration:</strong> <%= @walk.duration_in_minutes %> minutes<br />
 </p>
+<footer>
+	<%= link_to "Back to all walks", walks_path %> | <%= link_to "Back to all dogs", dogs_path %>
+</footer>

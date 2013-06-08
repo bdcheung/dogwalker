@@ -1,10 +1,10 @@
 <h1>Schedule a New Walk</h1>
 <header>Use the form below to schedule a new walk.</header>
 
-<%= form_for(@walk) do |f| %>
+<%= form_for [@dog, @walk] do |f| %>
 	<p>
 		<%= f.label :dog_id, "Select a dog" %>
-		<%= f.collection_select :dog_id, Dog.all, :id, :name %>
+		<%= f.collection_select :dog_id, Dog.all, :id, :name, :selected => params[:dog_id] %>
 	</p>
 	<p>
 		<%= f.label :starttime %>
@@ -15,6 +15,6 @@
 		<%= f.text_field :duration_in_minutes %>
 	</p>
 	<p>
-		<%= f.submit %>
+		<%= f.submit %> | <%= link_to "Cancel", dogs_path %>
 	</p>
 <% end %>

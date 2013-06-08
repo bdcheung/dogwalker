@@ -18,5 +18,5 @@
 	<% end %>
 </p>
 <footer>
-	<%= link_to "Show all dogs", dogs_path %>
+	<%= link_to "Schedule a walk for #{@dog.name}", new_walk_path(:dog_id => @dog.id) %> | <%= link_to "Show all dogs", dogs_path %>
 </footer>

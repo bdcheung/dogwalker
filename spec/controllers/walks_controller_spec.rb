@@ -13,5 +13,9 @@ describe WalksController do
 		it "should belong to a dog" do
 			@walk.dog_id.should be > 0
 		end
+
+		it "should have an endtime that is after the starttime" do
+			@walk.endtime.should be > @walk.starttime
+		end
 	end
 end
