@@ -1,4 +1,6 @@
 class WalksController < ApplicationController
+	before_filter :find_dog
+
 	def index
 		@walks = Walk.upcoming
 	end
@@ -8,7 +10,7 @@ class WalksController < ApplicationController
 	end
 
 	def create
-		@walk = Walk.new(params[:walk])
+		@walk = @dog.walks.new(params[:walk])
 		if @walk.save
 			redirect_to @walk
 		else
@@ -23,5 +25,9 @@ class WalksController < ApplicationController
 	private
 	def walk_params
 		params.require(:walk).permit(:starttime, :duration_in_minutes, :dog_id)
+	end
+
+	def find_dog
+		@dog = Dog.find(params[:dog_id])
 	end
 end

@@ -1,8 +1,8 @@
 class Dog < ActiveRecord::Base
 	has_many :walks, :dependent => :destroy
-	validates_presence_of :name, :birthday
-
+	validates_presence_of :name, :birthday, :rabies_certificate, :fixed
 	GENDER = ['Male', 'Female']
+	validates_inclusion_of :gender, in: GENDER
 
 	def age
 		Time.now.year - birthday.strftime("%Y").to_i

@@ -13,7 +13,7 @@
 <%= f.text_field :color %><br />
 
 <%= f.label :gender %>
-<%= f.select :gender, Dog::GENDER %><br />
+<%= f.select :gender, Dog::GENDER, prompt: "Pick one" %><br />
 
 <%= options_for_select([['Yes', true], ['No', false]]) %>
 <%= f.label :rabies_certificate %>

@@ -43,11 +43,12 @@ group :development, :test do
 	gem 'growl'
 end
 
-# Test gems on Macintosh OS X
 group :test do
 	gem 'capybara'
 	gem 'selenium-webdriver'
 	gem 'rb-fsevent', :require => false
+	gem 'factory_girl_rails'
+	gem 'cucumber-rails'
 end
 
 # Use ActiveModel has_secure_password
