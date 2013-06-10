@@ -1,0 +1,29 @@
+%p
+  %strong Name
+  = @dog.name
+  %br/
+  %strong Breed:
+  = @dog.breed
+  %br/
+  %strong Color:
+  = @dog.color
+  %br/
+  %strong Gender:
+  = @dog.gender
+  %strong Birthday:
+  = @dog.birthday.strftime("%B %-d, %Y")
+  %br/
+  %strong Rabies certificate on file:
+  = @dog.rabies_certificate
+  %br/
+
+%p
+  %h2 Upcoming Walks
+  - @dog.walks.upcoming.each do |w|
+    %p= w.starttime.strftime("%A, %B %-d at %-l:%M%P")
+    \- Duration: w.duration_in_minutes
+
+%footer
+  = link_to("Schedule a walk for #{@dog.name}", new_dog_walk_path(params[:id]))
+  \| 
+  = link_to("Show all dogs", dogs_path)
